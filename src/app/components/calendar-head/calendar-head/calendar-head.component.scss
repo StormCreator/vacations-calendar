@@ -1,0 +1,25 @@
+thead{
+    width: 100%;
+}
+
+.vacation-button{
+    width: 263px;
+    border: 1px solid var(--day-color);
+}
+
+.calendar__day{
+    width: 34px;
+    height: 64px;
+    text-align: center;
+    border: 1px solid var(--day-color);
+    span{
+        display: block;
+        margin-top: 2px;
+        font-size: 14px;
+        font-family: 'Yusei Magic';
+    }
+}
+
+.weekend{
+    background-color: var(--day-color);
+}

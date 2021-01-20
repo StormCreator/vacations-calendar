@@ -1,5 +1,9 @@
 <div class="container">
     <app-month-switcher></app-month-switcher>
-    <p>TABLE IS HERE!</p>
+    <table class="calendar">
+        <app-calendar-head
+            [daysInMonth]="daysInMonth"
+        ></app-calendar-head>
+    </table>
 </div>
 

@@ -1,0 +1,13 @@
+<thead class="calendar__head">
+    <tr>
+        <td class="vacation-button">
+            <button>
+                Add Vacation
+            </button>
+        </td>
+        <td class="calendar__day" *ngFor="let day of daysInMonth" [ngClass]="{weekend: day.isWeekend}">
+            <span class="calendar__day-name">{{day.date | date: 'EEEEEE'}}</span>
+            <span class="calendar__day-number">{{day.date | date: 'd'}}</span>
+        </td>
+    </tr>
+</thead>
