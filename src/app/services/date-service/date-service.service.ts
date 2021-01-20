@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { add } from 'date-fns';
+import { add, getDaysInMonth, setDate, isWeekend  } from 'date-fns';
+import { Day } from 'src/app/models/day';
 
 @Injectable({
   providedIn: 'root'
@@ -20,4 +21,6 @@ export class DateServiceService {
     this.currentDate = add(this.currentDate, { months: direction });
     this.dateSubj.next(this.currentDate);
   }
+
+
 }
