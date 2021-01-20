@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "vacations-calendar"
+  "defaultProject": "vacations-calendar",
+  "cli": {
+    "analytics": "d51b4cd2-65ef-467e-9956-ca7feb50af62"
+  }
 }

@@ -1,0 +1,5 @@
+<div class="month-switcher">
+    <button class="btn" (click)="changeMonth(-1)"><img src="../../../assets/img/prev.svg" alt=""></button>
+    <p class="month-name">{{currentDate | date: 'MMMM yyyy'}}</p>
+    <button class="btn" (click)="changeMonth(1)"><img src="../../../assets/img/next.svg" alt=""></button>
+</div>
