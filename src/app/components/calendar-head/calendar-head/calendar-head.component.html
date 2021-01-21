@@ -1,9 +1,11 @@
 <thead class="calendar__head">
     <tr>
         <td class="vacation-button">
-            <button>
-                Add Vacation
-            </button>
+            <div>
+                <button>
+                    Add Vacation
+                </button>
+            </div>
         </td>
         <td class="calendar__day" *ngFor="let day of daysInMonth" [ngClass]="{weekend: day.isWeekend}">
             <span class="calendar__day-name">{{day.date | date: 'EEEEEE'}}</span>

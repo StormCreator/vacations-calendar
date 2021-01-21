@@ -1,0 +1,26 @@
+tbody.team tr td:first-child{
+    background-color: red;
+    width: 263px;
+    height: 34px;
+    div{
+        display: inline-flex;
+    }
+}
+
+// .team__title{
+//     width: 263px;
+//     height: 34px;
+//     border: 1px solid var(--day-color);
+//     div{
+//         width: 100%;
+//         height: 100%;
+//         display: flex;
+//         justify-content: space-around;
+//         align-items: center;
+//     }
+// }
+.weekday{
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--day-color);
+}

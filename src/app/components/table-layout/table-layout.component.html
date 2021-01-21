@@ -3,7 +3,16 @@
     <table class="calendar">
         <app-calendar-head
             [daysInMonth]="daysInMonth"
-        ></app-calendar-head>
+        >
+        </app-calendar-head>
+        <ng-container *ngFor="let team of teams">
+            <app-team
+                [teamName]="team.realm"
+                [daysInMonth]="daysInMonth"
+            >
+
+            </app-team>
+        </ng-container>
     </table>
 </div>
 
