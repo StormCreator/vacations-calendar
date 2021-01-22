@@ -1,17 +1,31 @@
 <tbody class="team">
-    <tr>
-        <td class="team__title">
-            <div>
-                <p class="team__name">{{teamName}}</p>
-                <span class="team__lenth">
-                    <img src="../../../assets//img/team-people.svg" alt="team-length-icon">
-                    {{users.length}}
-                </span>
-                <span class="hide-arrow"><img src="../../../assets/img/hide-arrow.svg" alt="hide-icon"></span>
-            </div>
+        <tr>
+            <td class="team__title first-col">
+                <div>
+                    <p class="team__name">{{teamName}}</p>
+                    <span class="team__lenth">
+                        <img src="../../../assets//img/team-people.svg" alt="team-length-icon">
+                        {{users.length}}
+                    </span>
+                    <span class="hide-arrow"><img src="../../../assets/img/hide-arrow.svg" alt="hide-icon"></span>
+                </div>
+            </td>
+            <td class="weekday" *ngFor="let day of daysInMonth"> 
+    
+            </td>
+            <td class="sum-column weekday">
+    
+            </td> 
+        </tr>
+    <!-- <tr *ngFor="let user of users">
+        <td class="team__member">
+            <p class="team__member-name">{{user.name}}</p>
         </td>
-        <td class="weekday" *ngFor="let day of daysInMonth"> 
+        <td class="weekday" *ngFor="let day of daysInMonth">
 
         </td>
-    </tr>
+        <td class="sum-column weekday">
+
+        </td>   
+    </tr> -->
 </tbody>
