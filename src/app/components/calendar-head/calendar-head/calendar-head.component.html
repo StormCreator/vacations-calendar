@@ -1,6 +1,6 @@
 <thead class="calendar__head">
     <tr>
-        <td class="vacation-button">
+        <td class="title">
             <div>
                 <button>
                     Add Vacation
@@ -13,6 +13,18 @@
         </td>
         <td class="sum-column calendar__day">
             <p>Sum</p>
+        </td>
+    </tr>
+    <tr>
+        <td class="title">
+            <div></div>
+
+        </td>
+        <td class="weekday" *ngFor="let day of daysInMonth">
+
+        </td>
+        <td class="sum-column weekday">
+
         </td>
     </tr>
 </thead>

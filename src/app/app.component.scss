@@ -1,5 +1,5 @@
 .container{
-    width: 1316px;
+    width: 1320px;
     margin: 0 auto;
 }
 
@@ -18,6 +18,15 @@
 table td{
     padding: 0px;
     margin: 0px;
+}
+
+.title{
+    width: 230px;
+    div{
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
 }
 
 .sum-column{
