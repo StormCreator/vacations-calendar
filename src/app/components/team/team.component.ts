@@ -17,6 +17,7 @@ export class TeamComponent implements OnInit {
   
   users: User[];
   vacationList: VacationList[];
+  isHide: boolean;
   @Input() teamName: string;
   @Input() daysInMonth: Day[];
 
@@ -25,6 +26,7 @@ export class TeamComponent implements OnInit {
     this.teamName = '';
     this.daysInMonth = [];
     this.vacationList = [];
+    this.isHide = false;
   }
 
   ngOnInit(): void {
@@ -39,6 +41,14 @@ export class TeamComponent implements OnInit {
 
   ngOnDestroy(){
 
+  }
+
+  public toggleHiding(): void{
+    this.isHide = !this.isHide;
+  }
+
+  public getHideStatus():boolean{
+    return this.isHide;
   }
   
   // getUsersSubscribe(): void{ 
