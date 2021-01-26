@@ -2,6 +2,7 @@
     width: 1300px;
     margin: 0 auto;
 }
+
 .btn{
     background-color: transparent;
     border: none;
@@ -13,3 +14,37 @@
         height: 15px;
     }
 }
+
+table td{
+    padding: 0px;
+    margin: 0px;
+}
+
+.title{
+    width: 230px;
+    div{
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+.sum-column{
+    background-color: var(--weekend-color);
+    p{
+        font-size: 14px;
+        font-family: 'Yusei Magic';
+    }
+}
+
+.weekend{
+    background-color: var(--weekend-color);
+}
+
+.weekday{
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--day-border);
+    border-left: 0px;
+}
+

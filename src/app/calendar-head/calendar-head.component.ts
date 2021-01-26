@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Day } from 'src/app/models/day';
+import { Day } from '../models/day';
 
 @Component({
   selector: 'app-calendar-head',
@@ -7,11 +7,12 @@ import { Day } from 'src/app/models/day';
   styleUrls: ['./calendar-head.component.scss']
 })
 export class CalendarHeadComponent implements OnInit {
+
   @Input() daysInMonth: Day[];
 
   constructor() {
     this.daysInMonth = [];
-  } 
+  }
 
   ngOnInit(): void {
     

@@ -1,0 +1,37 @@
+<div class="team"> 
+    <div class="team__wrapper">
+        <div class="team__wrapper-title">
+            <div class="title team__title">
+                <div class="team__info">
+                    <p class="team__name">{{teamName}}</p>
+                    <span class="team__length">
+                        <img src="../../../assets//img/team-people.svg" alt="team-length-icon">
+                        {{users.length}}
+                    </span>
+                    <span class="team__hide"><img src="../../../assets/img/hide-arrow.svg" alt="hide-icon"></span>
+                </div>
+            </div>
+            <div class="weekday" *ngFor="let day of daysInMonth" [ngClass]="{weekend: day.isWeekend}">
+            
+            </div>
+            <div class="sum-column weekday">
+        
+            </div>
+        </div>
+        <div class="team__user" *ngFor="let user of users">
+            <div class="title team__user-title">
+                <div>
+                    <p>{{user.name}}</p>
+                </div>
+            </div>
+            <div class="weekday" *ngFor="let day of daysInMonth" [ngClass]="{weekend: day.isWeekend}">
+            
+            </div>
+            <div class="sum-column weekday">
+        
+            </div>
+        </div>
+    </div>
+</div>
+
+
