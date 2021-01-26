@@ -1,18 +1,51 @@
-<div class="container">
+<!-- <div class="container">
     <app-month-switcher></app-month-switcher>
     <table class="calendar">
-        <app-calendar-head
-            [daysInMonth]="daysInMonth"
-        >
-        </app-calendar-head>
+        <thead class="calendar__head">
+            <tr>
+                <td class="title title-vacation">
+                    <div>
+                        <button>
+                            Add Vacation
+                        </button>
+                    </div>
+                </td>
+                <td class="calendar__day" *ngFor="let day of daysInMonth" >
+                    <span class="calendar__day-name">{{day.date | date: 'EEEEEE'}}</span>
+                    <span class="calendar__day-number">{{day.date | date: 'd'}}</span>
+                </td>
+                <td class="sum-column calendar__day">
+                    <p>Sum</p>
+                </td>
+            </tr>
+        </thead>        
         <ng-container *ngFor="let team of teams">
             <app-team
                 [teamName]="team.realm"
                 [daysInMonth]="daysInMonth"
             >
-
             </app-team>
         </ng-container>
+        <app-team *ngFor="let team of teams"
+            [teamName]="team.realm"
+            [daysInMonth] = "daysInMonth"
+        >   
+        </app-team>
     </table>
 </div>
+ -->
 
+<div class="container">
+    <app-month-switcher></app-month-switcher>
+    <div class="calendar">
+        <app-calendar-head
+            [daysInMonth]="daysInMonth"
+        >
+        </app-calendar-head>
+        <app-team *ngFor="let team of teams"
+            [teamName]="team.realm"
+            [daysInMonth] = "daysInMonth"
+        >   
+        </app-team>
+    </div>
+</div>

@@ -26,25 +26,24 @@ export class UsersService {
       email: 'someemail.com',
       realm: teamsName.Frontend,
     },
-    // {
-    //   id: 4,
-    //   name: 'BA_User_1',
-    //   email: 'someemail.com',
-    //   realm: teamsName.Backend,
-    // },
-    // {
-    //   id: 5,
-    //   name: 'BA_User_2',
-    //   email: 'someemail.com',
-    //   realm: teamsName.Backend,
-    // },
-    // {
-    //   id: 6,
-    //   name: 'DS_User_1',
-    //   email: 'someemail.com',
-    //   realm: teamsName.Designers,
-    // },
-
+    {
+      id: 4,
+      name: 'BA_User_1',
+      email: 'someemail.com',
+      realm: teamsName.Backend,
+    },
+    {
+      id: 5,
+      name: 'BA_User_2',
+      email: 'someemail.com',
+      realm: teamsName.Backend,
+    },
+    {
+      id: 6,
+      name: 'DS_User_1',
+      email: 'someemail.com',
+      realm: teamsName.Designers,
+    },
   ];
 
   getUsers(): Observable<User[]> {

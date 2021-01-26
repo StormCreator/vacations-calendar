@@ -1,6 +1,12 @@
 .calendar{
     width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0px;
 }
 
+
+
+
+.weekday{
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--day-border);
+}

@@ -1,5 +1,5 @@
 .container{
-    width: 1320px;
+    width: 1300px;
     margin: 0 auto;
 }
 
@@ -39,5 +39,12 @@ table td{
 
 .weekend{
     background-color: var(--weekend-color);
+}
+
+.weekday{
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--day-border);
+    border-left: 0px;
 }
 

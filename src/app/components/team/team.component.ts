@@ -1,5 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Day } from 'src/app/models/day';
+import { Vacation } from 'src/app/models/vacation';
+import { VacationList } from 'src/app/models/vacationList';
+import { VacationsService } from 'src/app/services/vacations/vacations.service';
+import { setVacationToUser } from 'src/app/utils/functions/setVacations';
 import { User } from '../../models/user';
 import { UsersService } from '../../services/users/users.service';
 import { getUsersForTeam } from '../../utils/functions/setTeams';
@@ -12,21 +16,25 @@ import { getUsersForTeam } from '../../utils/functions/setTeams';
 export class TeamComponent implements OnInit {
   
   users: User[];
+  vacationList: VacationList[];
   @Input() teamName: string;
   @Input() daysInMonth: Day[];
 
-  constructor(private userService: UsersService) {
+  constructor(private userService: UsersService, private vacationService: VacationsService) {
     this.users = [];
     this.teamName = '';
     this.daysInMonth = [];
+    this.vacationList = [];
   }
 
   ngOnInit(): void {
     this.userService.getUsers().subscribe((users: User[])=>{  // вынести в отдельный метод!
       this.users = getUsersForTeam(this.teamName, users);
     });
-    console.log(this.users);
-    console.log(this.daysInMonth);
+    this.vacationService.getVacations().subscribe((vacations: Vacation[]) => {
+      this.vacationList = setVacationToUser(this.users, vacations);
+    })
+    console.log(this.vacationList);
   }
 
   ngOnDestroy(){

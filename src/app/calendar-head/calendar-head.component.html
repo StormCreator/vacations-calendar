@@ -1,0 +1,16 @@
+<div class="calendar__head">
+    <div class="title calendar__head-title">
+        <button class="btn">
+            Add Vacation
+        </button>
+    </div>
+    <div class="calendar__day" *ngFor="let day of daysInMonth" [ngClass]="{weekend: day.isWeekend}">
+        <span class="calendar__day-name">{{day.date | date: 'EEEEEE'}}</span>
+        <span class="calendar__day-number">{{day.date | date: 'd'}}</span>
+    </div>
+    <div class="sum-column calendar__day">
+        <span>
+            Sum
+        </span>
+    </div>
+</div>

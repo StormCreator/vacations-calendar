@@ -1,5 +1,5 @@
 export enum teamsName{
     Frontend = 'Frontend',
-    // Backend = 'Backend',
-    // Designers = 'Designers',
+    Backend = 'Backend',
+    Designers = 'Designers',
 }
