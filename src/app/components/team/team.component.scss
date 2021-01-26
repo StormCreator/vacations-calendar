@@ -33,9 +33,13 @@
     }
     &__hide{
         cursor: pointer;
+        display: flex;
+        height: 100%;
     }
     &__user{
         display: flex;
+        visibility: visible;
+        transition: visibility 0s, opacity 0.5s linear;
         &-title{
             border: 1px solid var(--day-border);
             border-top: 0px;
@@ -61,6 +65,15 @@
     }
 }
 
+.hide{
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+.reverse{
+    transform: rotate(180deg);
+}
 
 
 
