@@ -26,8 +26,11 @@
                     <p>{{user.name}}</p>
                 </div>
             </div>
-            <div class="weekday" *ngFor="let day of daysInMonth" [ngClass]="{weekend: day.isWeekend}">
+            <!-- <div class="weekday" *ngFor="let day of daysInMonth" [ngClass]="{weekend: day.isWeekend, vacation: isVacationDay(day, user.id), start: isVacationStart(day, user.id)}">
             
+            </div> -->
+            <div class="weekday" *ngFor="let day of daysInMonth" [ngClass]="getClass(day, user.id)">
+
             </div>
             <div class="sum-column weekday">
         

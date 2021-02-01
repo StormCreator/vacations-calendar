@@ -4,16 +4,16 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { MonthSwitcherComponent } from './components/month-switcher/month-switcher.component';
 import { TableLayoutComponent } from './components/table-layout/table-layout.component';
-import { TeamComponent } from './components/team/team.component';
 import { CalendarHeadComponent } from './calendar-head/calendar-head.component';
+import { TeamComponent } from './components/team/team.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MonthSwitcherComponent,
     TableLayoutComponent,
-    TeamComponent,
     CalendarHeadComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule

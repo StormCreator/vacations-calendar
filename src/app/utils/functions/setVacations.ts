@@ -1,21 +1,22 @@
+import { eachDayOfInterval } from 'date-fns';
 import { User } from 'src/app/models/user';
 import { Vacation } from 'src/app/models/vacation';
 import { VacationList } from 'src/app/models/vacationList';
 
-export const setVacationToUser = (users: User[], vacations: Vacation[]): VacationList[] => {
+export const setVacationsToUser = (vacations: Vacation[], users: User[]): VacationList[] => {
     const vacationList: VacationList[] = [];
     users.forEach(user => {
-        const userVacations: Vacation[] = [];
+        const vacationDays: Vacation[] = [];
         vacations.forEach(vacation => {
             if(user.id != vacation.userId){
                 return;
             }
-            userVacations.push(vacation);
+            vacationDays.push(vacation);
         });
         vacationList.push({
             userId: user.id,
-            vacations: userVacations
-        });
-    })
+            vacations: vacationDays 
+        })
+    });
     return vacationList;
 }

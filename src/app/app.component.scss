@@ -39,6 +39,7 @@ table td{
 
 .weekend{
     background-color: var(--weekend-color);
+    z-index: 1;
 }
 
 .weekday{
@@ -46,7 +47,39 @@ table td{
     height: 34px;
     border: 1px solid var(--day-border);
     border-left: 0px;
+    position: relative;
+    z-index: 1;
 }
 
+.vacation{
+    &::after{
+        content: '';
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: 2px;
+        bottom: 2px;
+        background-color: orange;
+        border: 1px solid orange;
+    }
+}
 
+.vacation-start{
+    &::after{
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        left: 2px;
+        top: 2px;
+        bottom: 2px;
+    }
+}
 
+.vacation-end{
+    &::after{
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        right: 2px;
+        top: 2px;
+        bottom: 2px;
+    }
+}

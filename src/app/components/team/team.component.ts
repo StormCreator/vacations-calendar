@@ -1,12 +1,14 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Day } from 'src/app/models/day';
-import { Vacation } from 'src/app/models/vacation';
+import { User } from 'src/app/models/user';
 import { VacationList } from 'src/app/models/vacationList';
-import { VacationsService } from 'src/app/services/vacations/vacations.service';
-import { setVacationToUser } from 'src/app/utils/functions/setVacations';
-import { User } from '../../models/user';
 import { UsersService } from '../../services/users/users.service';
 import { getUsersForTeam } from '../../utils/functions/setTeams';
+import { VacationsService } from '../../services/vacations/vacations.service';
+import { Vacation } from 'src/app/models/vacation';
+import { setVacationsToUser } from 'src/app/utils/functions/setVacations';
+import { isVacationDay, isVacationStart } from 'src/app/utils/functions/vacationSearch';
+import { getClass } from 'src/app/utils/functions/getClass';
 
 @Component({
   selector: 'app-team',
@@ -14,19 +16,19 @@ import { getUsersForTeam } from '../../utils/functions/setTeams';
   styleUrls: ['./team.component.scss']
 })
 export class TeamComponent implements OnInit {
-  
+
   users: User[];
   vacationList: VacationList[];
   isHide: boolean;
   @Input() teamName: string;
   @Input() daysInMonth: Day[];
 
-  constructor(private userService: UsersService, private vacationService: VacationsService) {
-    this.users = [];
+  constructor(private userService: UsersService, private vacationService: VacationsService) { 
     this.teamName = '';
     this.daysInMonth = [];
-    this.vacationList = [];
+    this.users = [];
     this.isHide = false;
+    this.vacationList = [];
   }
 
   ngOnInit(): void {
@@ -34,13 +36,8 @@ export class TeamComponent implements OnInit {
       this.users = getUsersForTeam(this.teamName, users);
     });
     this.vacationService.getVacations().subscribe((vacations: Vacation[]) => {
-      this.vacationList = setVacationToUser(this.users, vacations);
-    })
-    console.log(this.vacationList);
-  }
-
-  ngOnDestroy(){
-
+      this.vacationList = setVacationsToUser(vacations, this.users);
+    });
   }
 
   public toggleHiding(): void{
@@ -50,9 +47,18 @@ export class TeamComponent implements OnInit {
   public getHideStatus():boolean{
     return this.isHide;
   }
-  
-  // getUsersSubscribe(): void{ 
-    
-  // }
+
+  public isVacationDay(day: Day, userId: number): boolean{
+    return isVacationDay(day, this.vacationList, userId);
+  }
+
+  public isVacationStart(day: Day, userId: number): boolean {
+    return isVacationStart(day, this.vacationList, userId);
+  }
+
+  public getClass(day: Day, userId: number): string{
+    console.log(day);
+    return getClass(day, this.vacationList, userId);
+  }
 
 }
